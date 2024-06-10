@@ -1,6 +1,6 @@
 loguru == 0.6.0
 transformers == 4.41.1
-torch ~= 2.3.0
-torch-xla[tpu] ~= 2.3.0 -f https://storage.googleapis.com/libtpu-releases/index.html
+torch ~= 2.3.0 -f https://storage.googleapis.com/libtpu-releases/index.html
+torch_xla[tpu] ~= 2.3.0 -f https://storage.googleapis.com/libtpu-releases/index.html
 datasets
 evaluate
