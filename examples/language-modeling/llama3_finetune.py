@@ -58,9 +58,9 @@ trainer = Trainer(
         logging_steps=1,
         dataloader_drop_last=True,  # Required by FSDP v2 and SPMD.
         **fsdp_training_args,
-        callbacks=[ModelSaveGCSCallback()],
     ),
     data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
+    callbacks=[ModelSaveGCSCallback()],
 )
 
 print("***Training loaded")
