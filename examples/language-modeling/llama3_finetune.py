@@ -26,7 +26,7 @@ print("***Model loaded")
 print("***Dataset loading...")
 data = load_dataset("vngrs-ai/vngrs-web-corpus", streaming=True)
 shuffled_dataset = data.shuffle(seed=25)
-train_data = shuffled_dataset.map(lambda samples: tokenizer(samples["text"]), batched=True, padding='max_length', truncation=True, max_length=MAX_LENGTH)
+train_data = shuffled_dataset.map(lambda samples: tokenizer(samples["text"]), batched=True, max_length=MAX_LENGTH)
 print("***Dataset loaded")
 
 print("***fsdp_training_args loaded")
