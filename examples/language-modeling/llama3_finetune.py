@@ -24,10 +24,10 @@ model = AutoModelForCausalLM.from_pretrained(model_id, sequence_length=MAX_LENGT
 print("***Model loaded")
 
 def encode(examples):
-    return tokenizer(examples['text'], truncation=True, padding='max_length', max_length=MAX_LENGTH)
+    return tokenizer(examples['quote'], truncation=True, padding='max_length', max_length=MAX_LENGTH) # 'text'
 
 print("***Dataset loading...")
-data = load_dataset("vngrs-ai/vngrs-web-corpus", streaming=True)
+data = load_dataset("Abirate/english_quotes", streaming=True) # "vngrs-ai/vngrs-web-corpus" 
 shuffled_dataset = data.shuffle(seed=25)
 train_data = shuffled_dataset.map(encode, batched=True)
 print("***Dataset loaded")
