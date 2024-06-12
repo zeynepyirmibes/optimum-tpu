@@ -23,10 +23,13 @@ model = AutoModelForCausalLM.from_pretrained(model_id, sequence_length=MAX_LENGT
 
 print("***Model loaded")
 
+def encode(examples):
+    return tokenizer(examples['text'], truncation=True, padding='max_length', max_length=MAX_LENGTH)
+
 print("***Dataset loading...")
 data = load_dataset("vngrs-ai/vngrs-web-corpus", streaming=True)
 shuffled_dataset = data.shuffle(seed=25)
-train_data = shuffled_dataset.map(lambda samples: tokenizer(samples["text"]), batched=True, max_length=MAX_LENGTH)
+train_data = shuffled_dataset.map(encode, batched=True)
 print("***Dataset loaded")
 
 print("***fsdp_training_args loaded")
