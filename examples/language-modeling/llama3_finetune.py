@@ -10,7 +10,7 @@ from pathlib import Path
 MAX_LENGTH = 2048
 BATCH_SIZE = 1
 HOME_DIR = Path.home()
-OUTPUT_DIR = HOME_DIR / f"mount-folder/llama3_outdir/streaming_{BATCH_SIZE}_{MAX_LENGTH}/"
+OUTPUT_DIR = f"/home/zeynep.yirmibesoglu/mount-folder/llama3_outdir_2/streaming_{BATCH_SIZE}_{MAX_LENGTH}/"
 
 use_fsdp_v2()
 
