@@ -9,7 +9,7 @@ from pathlib import Path
 
 MAX_LENGTH = 1024
 BATCH_SIZE = 1
-OUTPUT_DIR = f"/home/mount-folder/llama3_outdir/streaming_{BATCH_SIZE}_{MAX_LENGTH}/"
+OUTPUT_DIR = f"/home/llama_outdir/streaming_{BATCH_SIZE}_{MAX_LENGTH}/"
 
 use_fsdp_v2()
 
@@ -54,7 +54,7 @@ trainer = Trainer(
         save_total_limit=1,
         max_steps=1000,
         output_dir=OUTPUT_DIR,
-        # optim="adafactor",
+        optim="adafactor",
         logging_steps=1,
         dataloader_drop_last=True,  # Required by FSDP v2 and SPMD.
         **fsdp_training_args,
