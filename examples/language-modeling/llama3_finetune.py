@@ -7,7 +7,7 @@ from transformers import DataCollatorForLanguageModeling, Trainer, TrainingArgum
 from transformers import TrainerCallback
 from pathlib import Path
 
-MAX_LENGTH = 2048
+MAX_LENGTH = 1024
 BATCH_SIZE = 1
 OUTPUT_DIR = f"/home/mount-folder/llama3_outdir/streaming_{BATCH_SIZE}_{MAX_LENGTH}/"
 
