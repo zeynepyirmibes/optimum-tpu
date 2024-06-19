@@ -54,7 +54,7 @@ trainer = Trainer(
         save_total_limit=1,
         max_steps=1000,
         output_dir=OUTPUT_DIR,
-        optim="adafactor",
+        # optim="adafactor",
         logging_steps=1,
         dataloader_drop_last=True,  # Required by FSDP v2 and SPMD.
         **fsdp_training_args,
